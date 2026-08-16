@@ -1,0 +1,40 @@
+{
+    // --- Indentation: 4 spaces everywhere, never inferred from the file ---
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+
+    // --- Auto-apply the style so drift can't creep back in ---
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [100],
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    // Arduino sketches are C++; without this .ino gets no formatter at all
+    "files.associations": {
+        "*.ino": "cpp",
+        "*.pde": "cpp"
+    },
+
+    // --- C/C++ formatting via clang-format, driven by ./.clang-format ---
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never, BreakBeforeBraces: Allman, ColumnLimit: 100 }",
+    "C_Cpp.vcFormat.indent.size": 4,
+    "C_Cpp.vcFormat.useTabs": false,
+
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    }
+}
