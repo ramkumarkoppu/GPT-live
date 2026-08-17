@@ -1,0 +1,22 @@
+---
+# Style for the Arduino/ESP32 sketches in this tree.
+# Picked up automatically by the C/C++ extension, which walks up from each
+# source file ("C_Cpp.clang_format_style": "file" in .vscode/settings.json).
+BasedOnStyle: LLVM
+
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+# 0 = no column limit: never wrap a line just because it is long
+ColumnLimit: 0
+BreakBeforeBraces: Allman
+
+# Allman means Allman. LLVM's default is "All", which collapses any body that
+# fits the column limit back onto one line - so a function reformats itself
+# under the cursor while you are still typing the body.
+AllowShortFunctionsOnASingleLine: None
+
+# Include order is hand-maintained: on Arduino, a library header often has to
+# come before another one to see its configuration macros. Leave it alone.
+SortIncludes: Never
+IncludeBlocks: Preserve

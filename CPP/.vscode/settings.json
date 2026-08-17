@@ -8,7 +8,6 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
-    "editor.rulers": [100],
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
 
@@ -21,7 +20,7 @@
     // --- C/C++ formatting via clang-format, driven by ./.clang-format ---
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.clang_format_style": "file",
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never, BreakBeforeBraces: Allman, ColumnLimit: 100 }",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never, BreakBeforeBraces: Allman, ColumnLimit: 0 }",
     "C_Cpp.vcFormat.indent.size": 4,
     "C_Cpp.vcFormat.useTabs": false,
 
