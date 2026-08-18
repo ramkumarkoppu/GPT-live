@@ -1,0 +1,13 @@
+# Captured audio. These are real microphone recordings - personal data, and
+# large. A recording was committed once before and had to be purged from
+# history; keep them out of the repo entirely.
+*.wav
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+*_env/
