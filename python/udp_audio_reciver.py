@@ -3,8 +3,21 @@ import wave
 import time
 
 # UDP settings
-udp_ip = "0.0.0.0"
+udp_ip = "0.0.0.0"      # bind to all interfaces
 udp_port = 12345
+
+
+def get_local_ip():
+    # No packets are sent - this just asks the kernel which interface
+    # would be used to reach the outside, then reads back its address
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(("8.8.8.8", 80))
+        return s.getsockname()[0]
+    except OSError:
+        return "127.0.0.1"
+    finally:
+        s.close()
 
 # Audio settings (must match ESP32)
 SAMPLE_RATE = 16000
@@ -14,7 +27,7 @@ SAMPLE_WIDTH = 4 # 32-bit = 4 bytes
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((udp_ip, udp_port))
 sock.settimeout(2.0)    # 2 seconds timeout
-print(f"Listening for audio on {udp_ip}:{udp_port}...")
+print(f"Listening for audio on {get_local_ip()}:{udp_port} (all interfaces)...")
 
 audio_data = bytearray()
 last_packet_time = time.time()
